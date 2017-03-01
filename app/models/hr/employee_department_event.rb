@@ -16,7 +16,9 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-class EmployeeDepartmentEvent < ActiveRecord::Base
-  belongs_to :event
-  belongs_to :employee_department
+module Hr
+  class EmployeeDepartmentEvent < ActiveRecord::Base
+    belongs_to :event
+    belongs_to :employee_department
+  end
 end

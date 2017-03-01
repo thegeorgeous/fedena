@@ -15,12 +15,13 @@
 #WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #See the License for the specific language governing permissions and
 #limitations under the License.
-
-class EmployeeLeaveType < ActiveRecord::Base
+module Hr
+  class EmployeeLeaveType < ActiveRecord::Base
     has_many :employee_leaves
     has_many :employee_attendances
 
     validates_presence_of :name, :code
     validates_uniqueness_of :name, :code
     validates_numericality_of :max_leave_count, :greater_than => 0
+  end
 end

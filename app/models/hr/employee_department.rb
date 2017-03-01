@@ -15,25 +15,26 @@
 #WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #See the License for the specific language governing permissions and
 #limitations under the License.
+module Hr
+  class EmployeeDepartment < ActiveRecord::Base
+    validates_presence_of :name
+    validates_uniqueness_of :name, :code
+    has_many :employees
+    has_many  :employee_department_events
+    has_many  :events,  :through=>:employee_department_events
+    scope :active, :conditions => {:status => true }
 
-class EmployeeDepartment < ActiveRecord::Base
-  validates_presence_of :name
-  validates_uniqueness_of :name, :code
-  has_many :employees
-  has_many  :employee_department_events
-  has_many  :events,  :through=>:employee_department_events
-  scope :active, :conditions => {:status => true }
 
-
-  def department_total_salary(start_date,end_date)
-    total = 0
-    self.employees.each do |e|
-      salary_dates = e.all_salaries(start_date,end_date)
-      salary_dates.each do |s|
-        total += e.employee_salary(s.salary_date.to_date)
+    def department_total_salary(start_date,end_date)
+      total = 0
+      self.employees.each do |e|
+        salary_dates = e.all_salaries(start_date,end_date)
+        salary_dates.each do |s|
+          total += e.employee_salary(s.salary_date.to_date)
+        end
       end
+      total
     end
-    total
-  end
 
+  end
 end

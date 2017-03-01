@@ -15,39 +15,40 @@
 #WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #See the License for the specific language governing permissions and
 #limitations under the License.
+module Hr
+  class EmployeeAdditionalDetail < ActiveRecord::Base
+    belongs_to :employee
+    belongs_to :additional_field
 
-class EmployeeAdditionalDetail < ActiveRecord::Base
-  belongs_to :employee
-  belongs_to :additional_field
-  
-  def archive_employee_additional_detail(archived_employee)
-    additional_detail_attributes = self.attributes
-    additional_detail_attributes.delete "id"
-    additional_detail_attributes["employee_id"] = archived_employee
-    self.delete if ArchivedEmployeeAdditionalDetail.create(additional_detail_attributes)
-  end
-
-  def save
-    unless self.destroyed?
-      super
+    def archive_employee_additional_detail(archived_employee)
+      additional_detail_attributes = self.attributes
+      additional_detail_attributes.delete "id"
+      additional_detail_attributes["employee_id"] = archived_employee
+      self.delete if ArchivedEmployeeAdditionalDetail.create(additional_detail_attributes)
     end
-    true
-  end
 
-  def validate
-    if self.additional_field.is_mandatory == true
-      if self.additional_info.blank?
-        errors.add("additional_info","can't be blank")
-        return false
-      else
-        return true
+    def save
+      unless self.destroyed?
+        super
       end
-    else
-      if self.additional_info.blank?
-        self.destroy
-        return true
+      true
+    end
+
+    def validate
+      if self.additional_field.is_mandatory == true
+        if self.additional_info.blank?
+          errors.add("additional_info","can't be blank")
+          return false
+        else
+          return true
+        end
       else
-        return true
+        if self.additional_info.blank?
+          self.destroy
+          return true
+        else
+          return true
+        end
       end
     end
   end
