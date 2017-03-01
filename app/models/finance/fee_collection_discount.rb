@@ -16,16 +16,18 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-class FeeCollectionDiscount < ActiveRecord::Base
+module Finance
+  class FeeCollectionDiscount < ActiveRecord::Base
 
-  def category_name
-    c =StudentCategory.find(self.receiver_id)
-    c.name unless c.nil?
+    def category_name
+      c =StudentCategory.find(self.receiver_id)
+      c.name unless c.nil?
+    end
+
+    def student_name
+      s =Student.find(self.receiver_id)
+      "#{s.first_name} (#{s.admission_no})" unless s.nil?
+    end
+
   end
-
-  def student_name
-    s =Student.find(self.receiver_id)
-    "#{s.first_name} (#{s.admission_no})" unless s.nil?
-  end
-
 end

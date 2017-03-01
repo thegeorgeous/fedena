@@ -46,15 +46,15 @@ end
 
 if User.first( :conditions=>{:admin=>true}).blank?
 
-  employee_category = EmployeeCategory.find_or_create_by_prefix(:name => 'System Admin',:prefix => 'Admin',:status => true)
+  employee_category = Hr::EmployeeCategory.find_or_create_by_prefix(:name => 'System Admin',:prefix => 'Admin',:status => true)
 
-  employee_position = EmployeePosition.find_or_create_by_name(:name => 'System Admin',:employee_category_id => employee_category.id,:status => true)
+  employee_position = Hr::EmployeePosition.find_or_create_by_name(:name => 'System Admin',:employee_category_id => employee_category.id,:status => true)
 
-  employee_department = EmployeeDepartment.find_or_create_by_code(:code => 'Admin',:name => 'System Admin',:status => true)
+  employee_department = Hr::EmployeeDepartment.find_or_create_by_code(:code => 'Admin',:name => 'System Admin',:status => true)
 
-  employee_grade = EmployeeGrade.find_or_create_by_name(:name => 'System Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil)
+  employee_grade = Hr::EmployeeGrade.find_or_create_by_name(:name => 'System Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil)
 
-  employee = Employee.find_or_create_by_employee_number(:employee_number => 'admin',:joining_date => Date.today,:first_name => 'Admin',:last_name => 'User',
+  employee = Hr::Employee.find_or_create_by_employee_number(:employee_number => 'admin',:joining_date => Date.today,:first_name => 'Admin',:last_name => 'User',
     :employee_department_id => employee_department.id,:employee_grade_id => employee_grade.id,:employee_position_id => employee_position.id,:employee_category_id => employee_category.id,:status => true,:nationality_id =>'76', :date_of_birth => Date.today-365, :email => 'noreply@fedena.com')
 
   employee.user.update_attributes(:admin=>true,:employee=>false)
@@ -66,7 +66,7 @@ end
   {"name" => 'Donation'       ,"description" => ' ',"is_income" => true},
   {"name" => 'Fee'            ,"description" => ' ',"is_income" => true}
 ].each do |param|
-  FinanceTransactionCategory.find_or_create_by_name(param)
+  Finance::FinanceTransactionCategory.find_or_create_by_name(param)
 end
 
 if Weekday.count == 0
@@ -103,7 +103,7 @@ end
 Event.all.each do |e|
   e.destroy if e.origin_type=="AdditionalExam"
 end
- 
+
 #insert record in privilege_tags table
 [
   {"name_tag" => "system_settings", "priority"=>5},
@@ -396,4 +396,3 @@ end
   "Palestine"].each do |param|
   Country.find_or_create_by_name(param)
 end
-
