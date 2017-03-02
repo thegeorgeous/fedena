@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
   end
 
   def role_name
-    return "#{t('admin')}" if self.admin?
+    return "#{I18n.t('admin')}" if self.admin?
     return "#{t('student_text')}" if self.student?
     return "#{t('employee_text')}" if self.employee?
     return "#{t('parent')}" if self.parent?
