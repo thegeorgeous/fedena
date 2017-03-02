@@ -52,7 +52,7 @@ Fedena::Application.routes.draw do
     resources :timetable_entries
   end
   root to: "user#login"
-
+  match 'user/forgot_password' => 'user#forgot_password'
   # fa_scores 'assessment_scores/exam/:exam_id/fa_group/:fa_group_id', :controller=>'assessment_scores',:action=>'fa_scores'
   # observation_scores 'assessment_scores/batch/:batch_id/observation_group/:observation_group_id', :controller=>'assessment_scores',:action=>'observation_scores'
   # scheduled_task 'scheduled_jobs/:job_object/:job_type',:controller => "scheduled_jobs",:action => "index"
