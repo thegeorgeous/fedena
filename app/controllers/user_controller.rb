@@ -290,7 +290,7 @@ class UserController < ApplicationController
     @username = @current_user.username if session[:user_id]
     @user = User.active.find_by_username(params[:id])
     unless @user.nil?
-      @employee = Employee.find_by_employee_number(@user.username)
+      @employee = Hr::Employee.find_by_employee_number(@user.username)
       @student = Student.find_by_admission_no(@user.username)
       @ward  = @user.parent_record if @user.parent
 
