@@ -1,4 +1,3 @@
-
 body {
     font-family:Arial;
     margin:0;
@@ -10,7 +9,7 @@ body {
 }
 #header_bg {
     height : 60px;
-    background : #b00 url(../../images/application/bg_pattern.png) repeat;
+    background : #b00 url(/assets/application/bg_pattern.png) repeat;
 }
 #header {
     width : 980px; height : 60px;
@@ -34,7 +33,7 @@ body {
 #main-menu {
     float : left;
     height : 60px; width : 500px;
-   
+
 }
 #main-menu a {
     background : #fff;
@@ -72,7 +71,7 @@ p.flash-msg {
 #fedena_logo {
     margin-top:30px;
     height:107px;
-    background:#fff url(../../images/application/app_fedena_logo.jpg) center center no-repeat;
+    background:#fff url(/assets/application/app_fedena_logo.jpg) center center no-repeat;
 }
 #content {
     width:980px;
@@ -81,7 +80,7 @@ p.flash-msg {
 
 #footer {
     height:33px;
-    background:#b00 url(../../images/application/app_layout_footer_bg.jpg) repeat;
+    background:#b00 url(/assets/application/app_layout_footer_bg.jpg) repeat;
 }
 #footer #footer_links {
     height:33px;width:614px;
@@ -349,7 +348,7 @@ body > #content_wrapper {
 
 .fieldWithErrors input{
     border : 1px solid #b00;
-    
+
 }
 .errorExplanation {
     background-color : #ffb1b1;
