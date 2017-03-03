@@ -17,17 +17,17 @@
 #limitations under the License.
 
 class ApplicationController < ActionController::Base
+  protect_from_forgery
   helper :all
   helper_method :can_access_request?
-  protect_from_forgery # :secret => '434571160a81b5595319c859d32060c1'
 
   before_filter { |c| Authorization.current_user = c.current_user }
   before_filter :message_user
   before_filter :set_user_language
   before_filter :set_variables
   before_filter :login_check
+  before_filter :set_page_title
 
-  before_filter :dev_mode
   include CustomInPlaceEditing
 
   def login_check
@@ -43,20 +43,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-  def dev_mode
-    if Rails.env == "development"
-
-    end
-  end
-
   def set_variables
     unless @current_user.nil?
       @attendance_type = FedenaConfiguration.get_config_value('StudentAttendanceType') unless @current_user.student?
       @modules = FedenaConfiguration.available_modules
     end
   end
-
 
   def set_language
     session[:language] = params[:language]
@@ -65,7 +57,6 @@ class ApplicationController < ActionController::Base
       page.reload
     end
   end
-
 
   if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound do |exception|
@@ -134,7 +125,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def initialize
+  def set_page_title
     @title = FedenaSetting.company_details[:company_name]
   end
 
@@ -177,8 +168,6 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "#{t('flash_msg4')}"
     end
   end
-
-
 
   def configuration_settings_for_finance
     finance = FedenaConfiguration.find_by_config_value("Finance")
