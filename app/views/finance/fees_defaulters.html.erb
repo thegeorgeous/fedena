@@ -34,14 +34,14 @@
         <label><%= t('select_courses') %>: </label>
         <div class="text-input-bg"> <%= select :fees_defaulters, :course_id, @courses.map { |c| [c.full_name, c.id] },
             {:prompt => "#{t('select_courses')}"},
-            {:onChange => "#{remote_function(:url => {:action => "update_batches"}, :with => "'course_id='+value")}"}%> </div>
+            {:onChange => "#{button_to(:url => {:action => "update_batches"}, :with => "'course_id='+value")}"}%> </div>
       </div>
 
       <div class="label-field-pair">
         <label><%= t('select_batch') %>: </label>
         <div class="text-input-bg" id="batches_list"> <%= select :fees_defaulters, :batch_id, @batchs.map { |b| [b.full_name, b.id] },
             {:prompt => "#{t('select_batch')}"},
-            {:onChange => "#{remote_function(:url => {:action => "update_fees_collection_dates_defaulters"}, :with => "'batch_id='+value")}"}%> </div>
+            {:onChange => "#{button_to(:url => {:action => "update_fees_collection_dates_defaulters"}, :with => "'batch_id='+value")}"}%> </div>
       </div>
 
       <div class="label-field-pair">

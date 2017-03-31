@@ -62,7 +62,7 @@
   <script type="text/javascript">
     function search_user_ajax(){
       if ($('query').value.include("%")) return;
-<%="#{remote_function(:url => {:action => "search_user_ajax"},
+<%="#{button_to(:url => {:action => "search_user_ajax"},
 :with =>  "'query='+ $('query').value",
 :before => "Element.show('loader')",
 :success => "Element.hide('loader')",

@@ -42,7 +42,7 @@
         <div  class="text-input-bg">
           <%= select :combined_report, :batch_id,
             @batches.map {|b| [b.full_name, b.id]},
-            {:prompt => "#{t('select_a_batch')}"},{:onChange => "#{remote_function(:url => {:action => "load_levels"}, :with => "'batch_id='+value")}"}%></div></div>
+            {:prompt => "#{t('select_a_batch')}"},{:onChange => "#{button_to(:url => {:action => "load_levels"}, :with => "'batch_id='+value")}"}%></div></div>
       <div id="levels"></div>
     <% end %>
 

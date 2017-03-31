@@ -56,7 +56,7 @@
   <script type="text/javascript">
     function search_logic(){
       if ($('query').value.include("%")) return;
-<%="#{remote_function(:url => {:action => "search_logic"},
+<%="#{button_to(:url => {:action => "search_logic"},
 :with => "'query='+$('query').value",
 :before => "Element.show('loader')",
 :success => "Element.hide('loader')",
@@ -73,4 +73,3 @@
 
   <div id="information"></div>
 </div>
-

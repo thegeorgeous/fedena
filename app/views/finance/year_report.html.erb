@@ -34,7 +34,7 @@
 
 
       <%= select_year Date.today,{:prompt=> "#{t('select_year')}",:end_year => 2050},
-        {:onChange => "#{remote_function(:url => {:action => "update_year_report"},
+        {:onChange => "#{button_to(:url => {:action => "update_year_report"},
         :with => "'date='+value")}"}%>
     </div>
   </div>

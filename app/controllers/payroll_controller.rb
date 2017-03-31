@@ -28,7 +28,7 @@ class PayrollController < ApplicationController
       flash[:notice]="#{t('flash1')}"
       redirect_to :action => "add_category"
     end
-    
+
   end
 
   def edit_category
@@ -79,7 +79,7 @@ class PayrollController < ApplicationController
     unless @independent_categories.empty? and @dependent_categories.empty?
       if payroll_created.empty?
         if request.post?
-          
+
           params[:manage_payroll].each_pair do |k, v|
             EmployeeSalaryStructure.create(:employee_id => params[:id], :payroll_category_id => k, :amount => v['amount'])
           end
@@ -106,7 +106,7 @@ class PayrollController < ApplicationController
           percentage_value = c.percentage
           calculated_amount =(amount.to_i*percentage_value/100)
           page["manage_payroll_#{c.id}_amount"].value = calculated_amount
-          page << remote_function(:url  => {:action => "update_dependent_fields"}, :with => "'amount='+ #{calculated_amount} + '&cat_id=' + #{c.id}")
+          page << button_to(:url  => {:action => "update_dependent_fields"}, :with => "'amount='+ #{calculated_amount} + '&cat_id=' + #{c.id}")
         end
       end
     end
@@ -125,7 +125,7 @@ class PayrollController < ApplicationController
         else
           EmployeeSalaryStructure.create(:employee_id => params[:id], :payroll_category_id => k, :amount => v['amount'])
         end
-        
+
       end
       flash[:notice] = "#{t('data_saved_for')} #{@employee.first_name}"
       redirect_to :controller => "employee", :action => "profile", :id=> @employee.id

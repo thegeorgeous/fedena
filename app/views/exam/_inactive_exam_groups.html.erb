@@ -25,7 +25,7 @@
   <%= select :course, :exam_group_id,
         @exam_groups.map {|b| [b.name, b.id]},
         {:prompt => "Select an Exam Group"},
-        {:onChange => "#{remote_function(:url => {:action => "previous_exam_marks"},
+        {:onChange => "#{button_to(:url => {:action => "previous_exam_marks"},
         :with => "'exam_group_id='+ value",
         :before => "Element.show('loader2')",
         :success => "Element.hide('loader2')"

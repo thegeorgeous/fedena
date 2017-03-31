@@ -28,7 +28,7 @@
     <%#= select :subject, :id,
       @subjects.map {|b| [b.name, b.id] },
       {:prompt => "#{t('select_a_subject')}"},
-      {:onchange => "#{remote_function(
+      {:onchange => "#{button_to(
       :url => { :action => 'show' },
       :with => "'subject_id='+value",
       :before => "Element.show('loader')",

@@ -31,7 +31,7 @@
     <%= select :subject, :id,
       dropdown_list,
       {:prompt => text},
-      {:onchange => "#{remote_function(
+      {:onchange => "#{button_to(
       :url => { :action => 'mode' },
       :with => "'subject_id='+value+'&batch_id='+#{@batch.id}",
       :before => "Element.show('loader')",

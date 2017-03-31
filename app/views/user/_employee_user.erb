@@ -21,7 +21,7 @@
 
 <div class="text-input-bg"><%= select :user_type, :type, EmployeeDepartment.active.map {|c| [c.name, c.id]},
     {:prompt => "#{t('select_a_department')}"},
-    {:onChange => "#{remote_function(:url => {:action => "list_employee_user"},
+    {:onChange => "#{button_to(:url => {:action => "list_employee_user"},
     :with => "'dept_id='+value",
         :before => "Element.show('loader')",
         :success => "Element.hide('loader')"
@@ -29,4 +29,3 @@
 
 </div>
  </div>
-

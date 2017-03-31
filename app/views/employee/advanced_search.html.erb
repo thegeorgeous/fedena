@@ -106,7 +106,7 @@
         </label>
         <div class="text-input-bg">
           <%= select :adv_search,:doj_option,[["#{t('equal_to')}","equal_to"],["#{t('less_than')}","less_than"],["#{t('greater_than')}","greater_than"]],{:prompt=>"#{t('choose_your_option')}"},
-            {:onChange => "#{remote_function(:url => {:action => "list_doj_year"},
+            {:onChange => "#{button_to(:url => {:action => "list_doj_year"},
             :with=>"'doj_option='+value",
             :before => "Element.show('loader')",
             :success => "Element.hide('loader')"
@@ -128,7 +128,7 @@
         </label>
         <div class="text-input-bg">
           <%= select :adv_search,:dob_option,[["#{t('equal_to')}","equal_to"],["#{t('less_than')}","less_than"],["#{t('greater_than')}","greater_than"]],{:prompt=>"#{t('choose_your_option')}"},
-            {:onChange => "#{remote_function(:url => {:action => "list_dob_year"},
+            {:onChange => "#{button_to(:url => {:action => "list_dob_year"},
             :with=>"'dob_option='+value",
             :before => "Element.show('loader')",
             :success => "Element.hide('loader')"

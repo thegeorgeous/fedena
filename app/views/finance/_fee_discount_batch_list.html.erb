@@ -19,5 +19,5 @@
 
 <div class="label-field-pair"><label><%= t('select_batch') %>: </label>
         <div class="text-input-bg"> <%= select("","", @batches.map{|b|[b.name,b.id]},{:prompt => "#{t('select_batch')}"},
-            {:onChange => "#{remote_function(:url => {:action => "load_batch_fee_category"}, :with => "'batch='+value")}"})%> </div>
+            {:onChange => "#{button_to(:url => {:action => "load_batch_fee_category"}, :with => "'batch='+value")}"})%> </div>
    </div>

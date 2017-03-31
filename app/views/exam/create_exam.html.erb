@@ -45,7 +45,7 @@
         <%= select :courses, :name,
           @course.map {|b| [b.full_name, b.id]},
           {:prompt => "#{t('select_a_course')}"},
-          {:onChange => "#{remote_function(:url => {:action => "update_batch"},
+          {:onChange => "#{button_to(:url => {:action => "update_batch"},
           :with => "'course_name='+ value",
           :before => "Element.show('loader')",
           :success => "Element.hide('loader')"

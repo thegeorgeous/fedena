@@ -33,7 +33,7 @@
     <div class="label-field-pair">
       <div class="text-input-bg"><%= select :user_type, :type, [["#{t('admin')}","Admin"], ["#{t('employee_text')}","Employee"],["#{t('student_text')}","Student"],["#{t('parent')}","Parent"]],
           {:prompt => "#{t('select_a_role')}"},
-          {:onChange => "#{remote_function(:url => {:action => "list_user"},
+          {:onChange => "#{button_to(:url => {:action => "list_user"},
           :with => "'user_type='+value",
           :before => "Element.show('loader')",
           :success => "Element.hide('loader')"
