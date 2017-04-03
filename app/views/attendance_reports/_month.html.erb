@@ -24,7 +24,7 @@
 <%= select :month, :id,
   [["#{t('jan')}",'01'], ["#{t('feb')}",'02'], ["#{t('mar')}",'03'], ["#{t('apr')}",'04'], ["#{t('may')}",'05'], ["#{t('jun')}",'06'], ["#{t('jul')}",'07'], ["#{t('aug')}",'08'], ["#{t('sep')}",'09'], ["#{t('oct')}",'10'], ["#{t('nov')}",'11'], ["#{t('dec')}",'12']],
   {:prompt => "#{t('select_a_month')}"},
-  {:onchange => "#{remote_function(
+  {:onchange => "#{button_to(
   :url => { :action => 'year' },
   :with => "'month='+value+'&batch_id='+#{@batch.id}+'&subject_id='+#{@subject}",
   :before => "Element.show('loader')",

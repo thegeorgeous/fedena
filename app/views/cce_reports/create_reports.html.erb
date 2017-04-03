@@ -61,7 +61,7 @@
           <%= select :course, :id,
             @courses.map {|b| [b.course_name + " " + b.section_name, b.id]},
             {:prompt => "#{t('select_a_course')}"},
-            {:onChange => "#{remote_function(:url => {:controller=>"batches",:action=>"batches_ajax"},:method=>:get,
+            {:onChange => "#{button_to(:url => {:controller=>"batches",:action=>"batches_ajax"},:method=>:get,
             :with => "'course_id='+ value +'&type=list'",
             :before => "Element.show('loader')",
             :success => "Element.hide('loader')",

@@ -1,4 +1,3 @@
-
 body {
     font-family:Arial;
     margin:0;
@@ -10,10 +9,10 @@ body {
 }
 #header_bg {
     height : 80px;
-    background : #b00 url(../../images/application/bg_pattern.png) repeat;
+    background : #b00 url(/assets/application/bg_pattern.png) repeat;
 }
 #header {
-    width : 980px; 
+    width : 980px;
     height : 80px;
     margin:0 auto;
 }
@@ -79,7 +78,7 @@ body {
     border-bottom-width : 0;
     font: normal 0.9em Arial;
     line-height: 18px;
-    background: #b00 url(../../images/application/bg_pattern.png) repeat;
+    background: #b00 url(/assets/application/bg_pattern.png) repeat;
 }
 #main-menu li:hover ul.level-1{
     visibility: visible;
@@ -123,7 +122,7 @@ body {
     border-bottom-width : 0;
     font: normal 0.9em Arial;
     line-height: 18px;
-    background: #b00 url(../../images/application/bg_pattern.png) repeat;
+    background: #b00 url(/assets/application/bg_pattern.png) repeat;
 }
 #main-menu li ul.level-1 li:hover ul.level-2{
     visibility: visible;
@@ -374,7 +373,7 @@ body > #content_wrapper {
     font: normal 0.9em Arial;
     line-height: 18px;
     z-index: 100; /* zIndex should be greater than that of shadow's below */
-    background: #b00 url(../../images/application/bg_pattern.png) repeat;
+    background: #b00 url(/assets/application/bg_pattern.png) repeat;
     width: 125px; /* default width for menu */
 }
 
@@ -535,7 +534,7 @@ body > #content_wrapper {
     margin-top :15px;
     height : 66px;
     clear : both;
-    background: url(/images/foot.png) repeat-x;
+    background: url(/assets/foot.png) repeat-x;
     width:100%;
 }
 #footer_logo {
@@ -550,11 +549,11 @@ body > #content_wrapper {
     height:66px;
     margin-top:-55px;
     width:210px;
-    background: url(/images/footer-logo.png) no-repeat 0 0 transparent;
+    background: url(/assets/footer-logo.png) no-repeat 0 0 transparent;
 }
 
 #footer_logo a.footer-logo:hover {
-    background: url(/images/footer-logo.png) no-repeat -210px 0 transparent;
+    background: url(/assets/footer-logo.png) no-repeat -210px 0 transparent;
 
 }
 
@@ -619,7 +618,7 @@ body > #content_wrapper {
     color: #666666;
     margin: 0 15px 0 0;
     padding: 0 0 0 20px;
-    background: url(/images/application/chat.png) no-repeat left;
+    background: url(/assets/application/chat.png) no-repeat left;
 }
 #news_bar .news_box .comments-count a{
     color: #666666;
@@ -653,10 +652,10 @@ body > #content_wrapper {
     text-decoration: none;
 }
 #profile-link a{
-    background: url(/images/application/profile.png) no-repeat left center;
+    background: url(/assets/application/profile.png) no-repeat left center;
 }
 #messages-link a{
-    background: url(/images/application/msg.png) no-repeat left center;
+    background: url(/assets/application/msg.png) no-repeat left center;
     float: left;
 }
 #messages-link span {
@@ -665,13 +664,13 @@ body > #content_wrapper {
     float: left;
 }
 #logout-link a{
-    background: url(/images/application/logout.png) no-repeat left center;
+    background: url(/assets/application/logout.png) no-repeat left center;
 }
 #logout-link{
     margin-right: 0 !important;
 }
 #profile-link:hover, #messages-link:hover, #logout-link:hover{
-    background: url(/images/application/top-link-bg.png) repeat;
+    background: url(/assets/application/top-link-bg.png) repeat;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;

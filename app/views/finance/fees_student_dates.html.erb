@@ -32,7 +32,7 @@
     <div class="text-input-bg">
       <%= select  :fees_submission, :dates_id, @dates.map { |e| [e.full_name, e.id]},
         {:prompt => "#{t('select_fee_collection')}"},
-        {:onChange => "#{remote_function( :url =>
+        {:onChange => "#{button_to( :url =>
         {:action => "fees_submission_student"},
         :with => "'date='+value+'&id='+#{@student.id}") }"} %>
     </div>

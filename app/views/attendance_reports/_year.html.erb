@@ -21,7 +21,7 @@
 <%= select :year, :id,
   [["#{t('year')}",""],[@year-1,@year-1],[@year,@year], [@year+1,@year+1]],
   {:prompt => "#{t('year')}"},
-  {:onchange => "#{remote_function(
+  {:onchange => "#{button_to(
   :url => { :action => 'report' },
   :with => "'year='+value+'&batch_id='+#{@batch.id}+'&month='+#{@month}+'&subject_id='+#{@subject}",
   :before => "Element.show('loader')",

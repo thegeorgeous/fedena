@@ -49,7 +49,7 @@
       <%= select :subject, :course_id,
         @courses.map {|c| [c.course_name, c.id]},
         {:prompt => "#{t('select_a_course')}"},
-        {:onChange => "#{remote_function(:url => {:action => "select_subjects"},
+        {:onChange => "#{button_to(:url => {:action => "select_subjects"},
         :with => "'course_id='+ value",
         :before => "Element.show('loader')",
         :success => "Element.hide('loader')"

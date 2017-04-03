@@ -43,7 +43,7 @@
       <div class="text-input-bg">
         <%= select :timetable_entry, :timetable_id, @timetables.map {|c| ["#{c.start_date.strftime("%d %b %Y")} - #{c.end_date.strftime("%d %b %Y")}", c.id]},
           {:selected => @current.present? ? @current.id : nil, :prompt => t('select_a_tte')},
-          {:onChange => "#{remote_function(:url => {:action => "update_employee_tt"}, :with => "'timetable_id='+value+'&employee_id='+#{@employee.id}",       :before => "Element.show('loader')",
+          {:onChange => "#{button_to(:url => {:action => "update_employee_tt"}, :with => "'timetable_id='+value+'&employee_id='+#{@employee.id}",       :before => "Element.show('loader')",
           :success => "Element.hide('loader')")}"} %>
       </div>
     </div>

@@ -48,7 +48,7 @@
     <div class="payslip-field-pair">
       <label for="payroll_category_name"><%= c.name %></label>
       <div class="payslip-input-bg"><%= s.text_field :amount, :index => c.id, :value => (val.nil? ? 0 : val.amount),
-                                                      :onChange=> "#{remote_function(:url  => {:controller=>"payroll",:action => "update_dependent_fields"},
+                                                      :onChange=> "#{button_to(:url  => {:controller=>"payroll",:action => "update_dependent_fields"},
                                                           :with => "'amount='+ value + '&cat_id=' + #{c.id}")}"%></div>
     </div>
     <% end %>
@@ -57,11 +57,11 @@
     <div class="payslip-field-pair">
       <label for="payroll_category_name"><%= c.name %></label>
       <div class="payslip-input-bg"><%= s.text_field :amount, :index => c.id, :value => (val.nil? ? 0 : val.amount),
-                                                      :onChange=> "#{remote_function(:url  => {:controller=>"payroll",:action => "update_dependent_fields"},
+                                                      :onChange=> "#{button_to(:url  => {:controller=>"payroll",:action => "update_dependent_fields"},
                                                           :with => "'amount='+ value + '&cat_id=' + #{c.id}")}"%></div>
     </div>
     <% end %>
- 
+
 
 
     <div id="submit-button">

@@ -39,7 +39,7 @@
       <label for="category_prefix"><%= t('select_payslip_month_year') %></label>
       <div class="text-input-bg"> <%= select :employee, :rejected_payslip, @payslips.map { |s| [s.salary_date.strftime("%B %Y"), s.salary_date] },
           {:prompt => "#{t('select_a_month')}"},
-          {:onChange => "#{remote_function(:url => {:action => "update_rejected_payslip"},
+          {:onChange => "#{button_to(:url => {:action => "update_rejected_payslip"},
                                            :with => "'salary_date='+value+'&emp_id='+#{params[:id]}")}"} %> </div>
     </div>
     <div class="extender"></div>

@@ -46,7 +46,7 @@
       <div class="text_field_bg">
         <%= f.select(:fee_category_id, @fee_categories.map { |item| [item.name, item.id] },
           {:prompt => "#{t('select_a_batch')}" },
-          {:onchange => "#{remote_function(:url => {:action => "fee_particulars_update"}, :with => "'student='+'#{@student.id}'+'&id='+value")}"})
+          {:onchange => "#{button_to(:url => {:action => "fee_particulars_update"}, :with => "'student='+'#{@student.id}'+'&id='+value")}"})
       %>
       </div>
     </div>

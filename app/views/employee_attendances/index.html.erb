@@ -40,7 +40,7 @@
       <%= select :batch, :id,
         @departments.map {|b| [b.name, b.id] },
         {:prompt => "#{t('select_the_department')}"},
-        {:onchange => "#{remote_function(
+        {:onchange => "#{button_to(
         :url => { :action => 'show' },
         :with => "'dept_id='+value",
         :before => "Element.show('loader')",

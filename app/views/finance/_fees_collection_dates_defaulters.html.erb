@@ -19,6 +19,6 @@
 
 <%= select  :fees_defaulters, :dates_id, @dates.map { |e| [e.full_name, e.id]},
    {:prompt => "#{t('select_fee_collection_date')}"},
-  {:onChange => "#{remote_function( :url =>
+  {:onChange => "#{button_to( :url =>
     {:action => "fees_defaulters_students"},
     :with => "'date='+value+'&batch_id='+$('fees_defaulters_batch_id').value") }"} %>

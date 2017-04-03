@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   has_many  :user_events
   has_many  :events,:through=>:user_events
   has_one :student_record,:class_name=>"Student",:foreign_key=>"user_id"
-  has_one :employee_record,:class_name=>"Employee",:foreign_key=>"user_id"
+  has_one :employee_record, class_name: 'Hr::Employee', foreign_key: 'user_id'
 
   scope :active, :conditions => { :is_deleted => false }
   scope :inactive, :conditions => { :is_deleted => true }
@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
   end
 
   def role_name
-    return "#{t('admin')}" if self.admin?
+    return "#{I18n.t('admin')}" if self.admin?
     return "#{t('student_text')}" if self.student?
     return "#{t('employee_text')}" if self.employee?
     return "#{t('parent')}" if self.parent?

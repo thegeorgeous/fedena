@@ -58,7 +58,7 @@
         <%= f.select :mode,
           [["#{t('monthly')}","Monthly"], ["#{t('overall')}","Overall"]],
           {:prompt => "#{t('select_mode')}"},
-          {:onchange => "#{remote_function(
+          {:onchange => "#{button_to(
           :url => { :action => 'month' },
           :with => "'mode='+value+'&id=#{@student.id}'",
           :before => "Element.show('loader')",

@@ -68,7 +68,7 @@
 </div>
 <script type="text/javascript">
   function show_timetable(){
-<%= "#{remote_function(:url => {:controller=>'timetable',:action => "update_timetable_view"},
+<%= "#{button_to(:url => {:controller=>'timetable',:action => "update_timetable_view"},
 :with => "'course_id='+$('timetable_entry_course_id').value+'&timetable_id='+$('timetable_entry_timetable_id').value", :before => "Element.show('loader')",
 :success => "Element.hide('loader')")}" %>}
 </script>

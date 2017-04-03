@@ -50,7 +50,7 @@
         <div class="text-input-bg">
           <%= form.select(:fee_category_id, @fee_categories.map { |item| [item.name, item.name] },
             {:selected => @fee_category.present? ? @fee_category.first.name : nil , :prompt => "#{ t('select_category')}" },
-            {:onchange => "#{remote_function(:url => {:action => "fee_collection_batch_update"}, :with => "'id='+value")}"})
+            {:onchange => "#{button_to(:url => {:action => "fee_collection_batch_update"}, :with => "'id='+value")}"})
         %></div>
       </div>
       <div class="label-field-pair">

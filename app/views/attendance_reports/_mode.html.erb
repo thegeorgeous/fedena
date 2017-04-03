@@ -19,12 +19,12 @@
 
 <div class="label-field-pair">
   <label><%= t('select_mode') %>: </label>
- 
+
 <div class="text-input-bg">
 <%= select :mode, :id,
   [["#{t('monthly')}","Monthly"], ["#{t('overall')}","Overall"]],
   {:prompt => "#{t('select_mode')}"},
-  {:onchange => "#{remote_function(
+  {:onchange => "#{button_to(
   :url => { :action => 'show' },
   :with => "'mode='+value+'&batch_id='+#{@batch.id}+'&subject_id='+#{@subject}",
   :before => "Element.show('loader')",

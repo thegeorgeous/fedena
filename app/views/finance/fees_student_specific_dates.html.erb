@@ -31,7 +31,7 @@
   <div class="text-input-bg">
     <%= select  :fees_submission, :dates_id, @dates.map { |e| [e.name+" : "+e.start_date.to_s, e.id]},
       {:prompt => "#{t('select_fees_collection_date')}"},
-      {:onChange => "#{remote_function( :url =>
+      {:onChange => "#{button_to( :url =>
       {:action => "update_fees_specific"},
       :with => "'date='+value+'&id='+#{@student.id}") }"} %>
   </div>

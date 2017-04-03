@@ -45,7 +45,7 @@
         <label for="employee_department_select"><%= t('select_the_department') %></label>
         <div class="text-input-bg"><%= select :employee_department, :department_id, @departments.map {|c| [c.name, c.id]},
             {:prompt => "#{t('select_the_department')}"},
-            {:onChange => "#{remote_function(:url => {:action => "list_department_leave_reset"},
+            {:onChange => "#{button_to(:url => {:action => "list_department_leave_reset"},
             :with => "'department_id='+value")}"} %></div>
       </div>
     <% end %>

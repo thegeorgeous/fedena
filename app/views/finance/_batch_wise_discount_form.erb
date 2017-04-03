@@ -33,7 +33,7 @@
     <div class="text-input-bg">
       <%= select("","", @fee_categories.map { |item| [item.name, item.name] },
         {:prompt => "#{t('select_category')}" },
-        {:onchange => "#{remote_function(:url => {:action => "fee_collection_batch_update"}, :with => "'id='+value")}"})
+        {:onchange => "#{button_to(:url => {:action => "fee_collection_batch_update"}, :with => "'id='+value")}"})
     %></div>
   </div>
 
