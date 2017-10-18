@@ -5,7 +5,7 @@ gem 'rails', '3.2.22.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql', '2.9.1'
-
+gem 'rake', '<11'
 gem 'nokogiri', '1.6.0'
 
 gem 'delayed_job', '3.0.0'
