@@ -4,7 +4,7 @@ gem 'rails', '3.2.22.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql', '2.8.1'
+gem 'mysql', '2.9.1'
 
 gem 'nokogiri', '1.6.0'
 

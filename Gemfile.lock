@@ -74,7 +74,7 @@ GEM
     mini_portile (0.5.3)
     multi_json (1.12.1)
     multi_test (0.1.2)
-    mysql (2.8.1)
+    mysql (2.9.1)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     paperclip (2.8.0)
@@ -145,7 +145,7 @@ DEPENDENCIES
   delayed_job_active_record
   in_place_editing
   jquery-rails
-  mysql (= 2.8.1)
+  mysql (= 2.9.1)
   nokogiri (= 1.6.0)
   paperclip (~> 2.3)
   rails (= 3.2.22.4)
@@ -157,4 +157,4 @@ DEPENDENCIES
   will_paginate (>= 3.0.pre)
 
 BUNDLED WITH
-   1.14.5
+   1.15.4
