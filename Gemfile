@@ -1,11 +1,9 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.4'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql', '2.8.1'
-
+gem 'mysql', '2.9.1'
+gem 'rake', '<11'
 gem 'nokogiri', '1.6.0'
 
 gem 'delayed_job', '3.0.0'
@@ -17,21 +15,8 @@ gem "paperclip", "~> 2.3"
 gem 'wicked_pdf', '0.7.0'
 
 gem 'declarative_authorization'
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
 
 gem 'jquery-rails'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
