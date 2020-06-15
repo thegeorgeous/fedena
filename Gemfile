@@ -12,7 +12,7 @@ gem 'will_paginate', '>=3.0.pre'
 gem 'in_place_editing'
 
 gem "paperclip", "~> 2.3"
-gem 'wicked_pdf', '0.7.0'
+gem 'wicked_pdf', '2.1.0'
 
 gem 'declarative_authorization'
 
