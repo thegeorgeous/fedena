@@ -6,7 +6,7 @@ gem 'mysql', '2.9.1'
 gem 'rake', '<11'
 gem 'nokogiri', '1.6.0'
 
-gem 'delayed_job', '3.0.0'
+gem 'delayed_job', '4.1.9'
 gem 'delayed_job_active_record'
 gem 'will_paginate', '>=3.0.pre'
 gem 'in_place_editing'
