@@ -11,7 +11,7 @@ gem 'delayed_job_active_record'
 gem 'will_paginate', '>=3.0.pre'
 gem 'in_place_editing'
 
-gem "paperclip", "~> 2.3"
+gem "paperclip", "~> 4.2"
 gem 'wicked_pdf', '0.7.0'
 
 gem 'declarative_authorization'
